@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Premium E-Commerce — Belanja produk terbaik dengan pengalaman checkout yang mudah dan aman." />
+  <meta name="theme-color" content="#0f0f13" />
+  <title>ShopVault — Premium E-Commerce</title>
+
+  <!-- Design System & Styles -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/checkout.css" />
+  <link rel="stylesheet" href="css/success.css" />
+</head>
+<body>
+  <div class="app-wrapper">
+
+    <!-- ======================== HEADER ======================== -->
+    <header class="app-header" role="banner">
+      <div class="app-header__inner">
+        <div class="app-logo" id="app-logo" role="button" tabindex="0" aria-label="Kembali ke beranda">
+          <div class="app-logo__icon" aria-hidden="true">🛍</div>
+          <span>ShopVault</span>
+        </div>
+
+        <nav class="app-nav" aria-label="Navigasi utama">
+          <button class="cart-trigger" id="cart-trigger" aria-label="Buka keranjang belanja">
+            <span aria-hidden="true">🛒</span>
+            <span>Keranjang</span>
+            <span class="cart-trigger__badge" id="cart-badge" aria-live="polite">0</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- ======================== MAIN ======================== -->
+    <main class="main-content" role="main">
+      <!-- Page: Cart -->
+      <div class="page active" id="page-cart" aria-label="Halaman Keranjang Belanja"></div>
+
+      <!-- Page: Checkout -->
+      <div class="page" id="page-checkout" aria-label="Halaman Checkout"></div>
+
+      <!-- Page: Success -->
+      <div class="page" id="page-success" aria-label="Halaman Pesanan Berhasil"></div>
+    </main>
+
+    <!-- ======================== LOADING OVERLAY ======================== -->
+    <div class="loading-overlay" id="loading-overlay" role="dialog" aria-modal="true" aria-label="Memproses pembayaran">
+      <div class="spinner" aria-hidden="true"></div>
+      <div class="loading-overlay__text">
+        Memverifikasi Pembayaran...
+        <div class="loading-overlay__sub">Mohon tunggu, jangan tutup halaman ini.</div>
+      </div>
+    </div>
+
+    <!-- ======================== TOAST ======================== -->
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  </div>
+
+  <!-- ======================== SCRIPTS ======================== -->
+  <!-- Load order matters: utils → store → components → app -->
+  <script src="js/utils.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/success.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
